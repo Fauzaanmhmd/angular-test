@@ -1,0 +1,24 @@
+<div class="popup-container">
+    <div class="popup-content" id="printSection">
+        <h2>ALMEGATEX</h2>
+        <hr />
+        <p><strong>Nomor Antrian Anda:</strong></p>
+        <h1>{{ queueNumber }}</h1>
+        <p>Mohon Menunggu</p>
+        <div class="barcode">
+            <img [src]="generateBarcode(queueNumber)" alt="Barcode" />
+        </div>
+        <p>{{ currentDate }}</p>
+        <hr />
+        <p>
+            Budayakan antri untuk kenyamanan bersama <br />
+            Terima Kasih atas kunjungan anda
+        </p>
+    </div>
+
+    <div class="popup-actions">
+        <button mat-raised-button color="primary" (click)="printQueue()">Print</button>
+        <button mat-raised-button color="warn" (click)="redirectToRoot()">Close</button>
+
+    </div>
+</div>
